@@ -1,13 +1,15 @@
 import './App.css';
-import Navbar from './Components/Navbar';
 import Product from './Components/product';
-import Footer from './Components/Footer';
+import Footer from './Footer/Footer';
+import Navbar from './Header/Navbar';
+import Router from './RouterComponent/Router';
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Product/>
+      {/* <Navbar/> */}
+      <Router/>
       <Footer/>
     </div>
   );

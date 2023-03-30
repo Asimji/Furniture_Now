@@ -44,26 +44,26 @@ export default function Footer(){
             </div>
             <div className="footer-col">
                 <h4>experience Furniture Now on Mobile</h4>
-                <Link ><img src={logo1}/> </Link>
-               <Link ><img src={logo3}/> </Link> 
+                <Link ><img src={logo1} alt="logo"/> </Link>
+               <Link ><img src={logo3} alt="logo"/> </Link> 
             <h4>keep in touch</h4>
             <div className="social-links">
-               <Link> <img src={logo2} /></Link>
-               <Link > <img src={logo4} /></Link>
-               <Link > <img src={logo5}/></Link>
-               <Link > <img src={logo6}/></Link>
+               <Link> <img src={logo2} alt="logo"/></Link>
+               <Link > <img src={logo4} alt="logo"/></Link>
+               <Link > <img src={logo5} alt="logo"/></Link>
+               <Link > <img src={logo6} alt="logo"/></Link>
             </div>
             </div>
              <div className="footer-col">
                 <div className="footer-promise">
-                   <Link> <img src={logo7} /></Link>
+                   <Link> <img src={logo7} alt="logo"/></Link>
                     <div>
                         <strong>100% ORIGINAL</strong>
                         <span>guarantee for all products at furnitureNow.com</span>
                     </div>
                 </div>
                 <div className="footer-promise" >
-                   <Link > <img src= {logo8}  /></Link>
+                   <Link > <img src= {logo8} alt="logo" /></Link>
                     <div>
                         <strong>Return within 30days</strong>
                         <span>of receiving your order</span>
