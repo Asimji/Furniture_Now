@@ -3,7 +3,7 @@ import  axios  from "axios"
 import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box,Input, Center} from '@chakra-ui/react'
 import { Search2Icon } from "@chakra-ui/icons"
 import Pagination from "./pagination"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 
@@ -15,6 +15,9 @@ export default function Product(){
  const [page,setPage]=useState(1);
  const [count,setcount]=useState("")
 
+ 
+ const navigate=useNavigate()
+
 
  
 const limit=6;
@@ -22,7 +25,8 @@ const limit=6;
 useEffect(()=>{
 
     axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}`,{
-      page:page
+      page:page,
+
     }).then((res)=>{setData(res.data);console.log(res);setcount(res.data.length)}).catch((e)=>console.log(e))
 },[page])
 
@@ -33,8 +37,20 @@ const handlePage=(page)=>{
 }
 
     return (
-        <Box>
-     <Input type="text" placeholder="Search Product" w="250px" h={28} icon={<Search2Icon/>} value={query} onChange={(e)=>{setQuery(e.target.value)}} mt={10}/> 
+        <Box >
+
+     <Input type="text" placeholder="Search Product" w="250px" h={28} icon={<Search2Icon/>} value={query} onChange={(e)=>{setQuery(e.target.value)}} mt={30}/>
+
+     <br />
+     <br />
+     <select >
+      <option value="">Select</option>
+      <option value="dining">Dining Set</option>
+      <option value="bed">Bed</option>
+      <option value="sofa">Sofa</option>
+      <option value="chair">Chair</option>
+      </select> 
+      <br />
        
      <SimpleGrid columns={3} spacing={10} mt={10}>
           {data.filter((user)=>user.type.toLowerCase().includes(query)||user.brand.toLowerCase().includes(query)).map((item)=>{
