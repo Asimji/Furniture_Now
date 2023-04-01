@@ -1,34 +1,52 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import  axios  from "axios"
-import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box,Input, Center} from '@chakra-ui/react'
+import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box,Input, Center,Select} from '@chakra-ui/react'
 import { Search2Icon } from "@chakra-ui/icons"
 import Pagination from "./pagination"
 import { Link, useNavigate } from "react-router-dom"
+import { SearchContext } from "../Context/SearchContext"
 
 
 
 export default function Product(){
 
  const [data,setData]=useState([])
- const [query,setQuery]=useState("")
+ 
 
  const [page,setPage]=useState(1);
  const [count,setcount]=useState("")
+ const [SelValue,setSelValue]=useState("")
+
+ const value=useContext(SearchContext)
+
 
  
  const navigate=useNavigate()
 
-
+const handleSelect=(e)=>{
+  setSelValue(e.target.value)
+  console.log(SelValue)
+}
  
 const limit=6;
 
 useEffect(()=>{
+  if(SelValue===""){
+  ( axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}`,{
+      page:page,
 
-    axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}`,{
+    }).then((res)=>{setData(res.data);setcount(res.data.length)}).catch((e)=>console.log(e)))
+  }
+else {
+(
+    axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}&type=${SelValue}`,{
       page:page,
 
     }).then((res)=>{setData(res.data);console.log(res);setcount(res.data.length)}).catch((e)=>console.log(e))
-},[page])
+  )
+}
+   
+}, [page,SelValue])
 
 console.log(count)
 
@@ -37,23 +55,23 @@ const handlePage=(page)=>{
 }
 
     return (
-        <Box >
+        <Box mt={90} >
 
-     <Input type="text" placeholder="Search Product" w="250px" h={28} icon={<Search2Icon/>} value={query} onChange={(e)=>{setQuery(e.target.value)}} mt={30}/>
+    <div style={{float:"left",marginLeft:"85px",width:"200px"}}>
 
-     <br />
-     <br />
-     <select >
-      <option value="">Select</option>
+     <select onChange={handleSelect} style={{width:"100%"}}>
+      <option value="">Filter By Category</option>
       <option value="dining">Dining Set</option>
       <option value="bed">Bed</option>
       <option value="sofa">Sofa</option>
       <option value="chair">Chair</option>
       </select> 
+    </div>
+ 
       <br />
        
      <SimpleGrid columns={3} spacing={10} mt={10}>
-          {data.filter((user)=>user.type.toLowerCase().includes(query)||user.brand.toLowerCase().includes(query)).map((item)=>{
+          {data.filter((user)=>user.type.toLowerCase().includes(value.query)||user.brand.toLowerCase().includes(value.query)).map((item)=>{
               return (
                   <Card maxW='sm' key={item.id} m={5}> 
         <CardBody>

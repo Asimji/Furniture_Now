@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css"
 
 
@@ -15,15 +15,20 @@ export default function Login(){
     const handleSubmit=(e)=>{
      e.preventDefault();
      const loggedUser=JSON.parse(localStorage.getItem("input"))
+     if(!loggedUser){
+        alert("Please Register")
+        navigate("/register")
+     }
      if(user.email===loggedUser.email && user.password===loggedUser.password){
-        localStorage.setItem("loggedIn",true)
-         navigate("/product")
+      
+         navigate("/")
      }
      else{
         alert("Incorrect Email/Password")
      }
 
     }
+   
 
     return <div style={{height:"600px"}}>
   <div className="lok_login_Container">
@@ -54,7 +59,7 @@ export default function Login(){
                             className="pincolor">Privacy Policy</span></p>
                     <input type="submit" id="button" />
                             </form>
-                    <p style={{fontSize:"12px",fontWeight:"bold"}}>Have trouble logging in? <span className="pincolor"><a href="/register">REGISTER HERE / SignUp</a></span> </p>
+                    <p style={{fontSize:"12px",fontWeight:"bold"}}>Have trouble logging in? <span className="pincolor"><Link to="/register">REGISTER HERE / SignUp</Link></span> </p>
                 </div>
             </div>
         </div>

@@ -1,8 +1,18 @@
 import "./Navbar.css"
 import logo from "../Images/Furniture_Now.jpg"
+import { useContext } from "react"
+import {SearchContext} from "../Context/SearchContext";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar(){
 
+  const val=useContext(SearchContext);
+  console.log(val)
+  const navigate=useNavigate()
+
+const handleChange=(e)=>{
+  val.setQuery(e.target.value)
+}
   const userName=JSON.parse(localStorage.getItem("input"))||""
 
     return  (
@@ -16,13 +26,13 @@ export default function Navbar(){
 
        
     <div  className="logo_div">
-      <a href="/"> <img id="logo" src={logo}/></a> 
+      <Link to="/"> <img id="logo" src={logo}/></Link> 
     </div>
 
    <div className="menu_div">
        
         <div id="main_div">
-              <a id="button"  href="/">Furniture</a>
+              <Link id="button"  to="/product">Furniture</Link>
             <div id="arif1">
               <div id="b">
                  <div className="div" id="d1">
@@ -104,7 +114,7 @@ export default function Navbar(){
 
 
        <div id="main_div">
-       <a id="button"  href="/">Mattress</a>
+       <Link id="button"  to="/product">Mattress</Link>
        <div id="arif2">
          <div id="b">
             <div className="div" id="d1">
@@ -174,7 +184,7 @@ export default function Navbar(){
 
 
    <div id="main_div">
-   <a id="button"  href="/">Home Decor</a>
+   <Link id="button"  to="/product">Home Decor</Link>
    <div id="arif3">
      <div id="b">
         <div className="div" id="d1">
@@ -258,7 +268,7 @@ export default function Navbar(){
 
 
 <div id="main_div">
-<a id="button"  href="/">Furnishing</a>
+<Link id="button"  to="/product">Furnishing</Link>
 <div id="arif4">
   <div id="b">
      <div className="div" id="d1">
@@ -423,7 +433,7 @@ export default function Navbar(){
 
 
 <div id="main_div">      
-<a  id="button"  href="/">Style<sup>New</sup></a>
+<Link  id="button"  to="/product">Style<sup>New</sup></Link>
    </div>
 </div>
 
@@ -436,7 +446,7 @@ export default function Navbar(){
 <div className="parent-box-2">
 
 <div className="div1">
-    <input  type="text" name="" id="search" placeholder="Search for products, brands and more"/>
+    <input  type="text" name="" id="search" placeholder="Search for products, brands and more" onChange={handleChange}/>
     
         <span><i className="fa-solid fa-magnifying-glass">&nbsp;</i></span> 
         
@@ -459,8 +469,13 @@ export default function Navbar(){
              <div className="div" id="d1">
                  <h5 id="lh5">Welcome {userName.name}</h5>
                  <p id="lp">To access account and manage order</p>
-                 <button id="ls" style={{width:"80px",height:"50px"}}
-                 >{userName!==""?<a id="logincss"href="/login">Logout{localStorage.removeItem("loggedIn")}</a>:<a id="logincss"href="/login">LOGIN / SIGNUP</a>}</button>
+           
+              {userName===""?<Link id="logincss" to="/login">
+              <button id="ls" style={{width:"80px",height:"50px"}} >LOGIN / SIGNUP</button>
+              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");navigate("/")}}>Logout</button>
+                }
+                 
+              
                  <br/>
                  <>
                      <ul>
@@ -468,7 +483,7 @@ export default function Navbar(){
                         <li><a href="/">Wishlist</a></li>
                          <li><a href="/">Gift card</a></li>
                          <li><a href="/">Contact us</a></li>
-                          <li><a href="/">Furniture_Now <button id="insider_span">New</button></a></li>
+                      <li>Furniture_Now   <Link to="/admin"> <button id="insider_span">Admin</button></Link> </li> 
                       
                      </ul>
                     
