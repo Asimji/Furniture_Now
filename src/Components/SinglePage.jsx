@@ -2,9 +2,9 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {
-Button,Center,Divider,Text,Heading,Stack,Image,CardBody,Card,Box,SimpleGrid
+Button,Text,Heading,Image,Box,SimpleGrid
 } from "@chakra-ui/react"
-
+import "./SinglePage.css"
 
 
 export default function SinglePage(){
@@ -21,7 +21,7 @@ export default function SinglePage(){
 
     return  <Box mt={100}>
   
-                 <SimpleGrid columns={2} maxW='sm' > 
+                 <SimpleGrid columns={2}  className="card"> 
       
 
       <Box >
@@ -52,7 +52,8 @@ export default function SinglePage(){
             <Button w="80px" borderRadius="100px">Small</Button>
            </SimpleGrid>
            <SimpleGrid columns={2} gap={10} mt={10} pl={20} pr={20}>
-        <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer">
+        <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer"
+        onClick={()=>{alert("Product Added Successfully")}}>
         ADD TO CART  </Button>
         <Button borderRadius="10px"  border="none" cursor="pointer">WISHLIST</Button>
            </SimpleGrid>

@@ -24,12 +24,12 @@ export default function Footer(){
             online Shoping
          </h4>
          <ul>
-         <li> <Link> Sofa  </Link></li>
-         <li> <Link> Dining Set </Link></li>
-         <li> <Link> Bed  </Link></li>
-         <li> <Link> Chairs  </Link></li>
-          <li><Link> BedSheet   </Link></li>
-        <li> <Link>  Miscilaneous  </Link></li>
+         <li> <Link to="/product"> Sofa  </Link></li>
+         <li> <Link to="/product"> Dining Set </Link></li>
+         <li> <Link to="/product"> Bed  </Link></li>
+         <li> <Link to="/product"> Chairs  </Link></li>
+          <li><Link to="/product"> BedSheet   </Link></li>
+        <li> <Link to="/product">  Miscilaneous  </Link></li>
          </ul>
             </div>
             <div className="footer-col">

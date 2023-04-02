@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import  axios  from "axios"
-import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box,Input, Center,Select} from '@chakra-ui/react'
-import { Search2Icon } from "@chakra-ui/icons"
+import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box, Center} from '@chakra-ui/react'
+
 import Pagination from "./pagination"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { SearchContext } from "../Context/SearchContext"
+import "./product.css"
 
 
 
@@ -21,11 +22,15 @@ export default function Product(){
 
 
  
- const navigate=useNavigate()
+ 
 
 const handleSelect=(e)=>{
   setSelValue(e.target.value)
   console.log(SelValue)
+}
+
+const handleAdd=()=>{
+  alert("Product Added Successfully")
 }
  
 const limit=6;
@@ -70,7 +75,7 @@ const handlePage=(page)=>{
  
       <br />
        
-     <SimpleGrid columns={3} spacing={10} mt={10}>
+     <SimpleGrid columns={3} spacing={10} mt={10} className="card1">
           {data.filter((user)=>user.type.toLowerCase().includes(value.query)||user.brand.toLowerCase().includes(value.query)).map((item)=>{
               return (
                   <Card maxW='sm' key={item.id} m={5}> 
@@ -101,7 +106,8 @@ const handlePage=(page)=>{
               View More
             </Button>
               </Link>
-            <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer">
+            <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer" 
+             onClick={handleAdd}>
               Add to cart
             </Button>
           </ButtonGroup>

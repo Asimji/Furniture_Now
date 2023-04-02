@@ -17,10 +17,11 @@ export default function Login(){
      const loggedUser=JSON.parse(localStorage.getItem("input"))
      if(!loggedUser){
         alert("Please Register")
+       
         navigate("/register")
      }
      if(user.email===loggedUser.email && user.password===loggedUser.password){
-      
+        localStorage.setItem("loggedIn",true)
          navigate("/")
      }
      else{

@@ -26,82 +26,82 @@ const handleChange=(e)=>{
 
        
     <div  className="logo_div">
-      <Link to="/"> <img id="logo" src={logo}/></Link> 
+      <Link to="/"> <img id="logo" src={logo} alt="Hello"/></Link> 
     </div>
 
    <div className="menu_div">
        
         <div id="main_div">
               <Link id="button"  to="/product">Furniture</Link>
-            <div id="arif1">
+            <div id="asim1">
               <div id="b">
                  <div className="div" id="d1">
-                     <h5 className="h5"><a href="/">Sofas</a></h5>
+                     <h5 className="h5"><Link to="/product">Sofas</Link></h5>
                          <ul>
-                            <li><a href="/">3 Seater Sofas</a></li>
-                            <li><a href="/">2 Seater Sofas</a></li>
-                             <li><a href="/">1 Seater Sofas</a></li>
-                             <li><a href="/">Sectional Sofas</a></li>
-                              <li><a href="/">LHS Seactionals</a></li>
-                             <li><a href="/">RHS Sectionals</a></li>
-                             <li><a href="/">Futons</a></li>
-                             <li><a href="/">Chaise Loungers</a></li>
-                            <li><a href="/">Bean Bags</a></li>
+                            <li><Link to="/product">3 Seater Sofas</Link></li>
+                            <li><Link to="/product">2 Seater Sofas</Link></li>
+                             <li><Link to="/product">1 Seater Sofas</Link></li>
+                             <li><Link to="/product">Sectional Sofas</Link></li>
+                              <li><Link to="/product">LHS Seactionals</Link></li>
+                             <li><Link to="/product">RHS Sectionals</Link></li>
+                             <li><Link to="/product">Futons</Link></li>
+                             <li><Link to="/product">Chaise Loungers</Link></li>
+                            <li><Link to="/product">Bean Bags</Link></li>
                        
                          </ul>
                          </div>
                          <div  id="d2">  
-                          <h5 className="h5"><a href="/">Recliners</a></h5>
+                          <h5 className="h5"><Link to="/product">Recliners</Link></h5>
                           <ul>
-                             <li><a href="/">1 Seater Recliners</a></li>
-                             <li><a href="/">2 Seater Recliners</a></li>
-                             <li><a href="/">3 Seater Recliners</a></li>
-                             <li><a href="/">Sofa Chairs</a></li>
+                             <li><Link to="/product">1 Seater Recliners</Link></li>
+                             <li><Link to="/product">2 Seater Recliners</Link></li>
+                             <li><Link to="/product">3 Seater Recliners</Link></li>
+                             <li><Link to="/product">Sofa Chairs</Link></li>
                          </ul>
                       </div>
                 
                 <div id="d3">
-                   <h5 className="h5"><a href="/">Chairs</a></h5>
+                   <h5 className="h5"><Link to="/product">Chairs</Link></h5>
                    <ul>
-                    <li><a href="/">Arm Chairs</a></li>
-                    <li><a href="/">Rocking Chairs</a></li>
-                    <li><a href="/">Folding Chairs</a></li>
-                    <li><a href="/">Iconic Chairs</a></li>
-                    <li><a href="/">Cafe Chairs</a></li>
+                    <li><Link to="/product">Arm Chairs</Link></li>
+                    <li><Link to="/product">Rocking Chairs</Link></li>
+                    <li><Link to="/product">Folding Chairs</Link></li>
+                    <li><Link to="/product">Iconic Chairs</Link></li>
+                    <li><Link to="/product">Cafe Chairs</Link></li>
                    </ul>
 
                    </div> 
                    <div id="d4">
-                   <h5 className="h5"><a href="/"></a>Centre Tables</h5>
+                   <h5 className="h5"><Link to="/product"></Link>Centre Tables</h5>
                    <ul>
-                    <li><a href="/">Coffee Tables</a></li>
-                    <li><a href="/">Coffee Table Sets</a></li>
-                    <li><a href="/">Nesting Table Sets</a></li>
-                    <li><a href="/">Trunks</a></li>
-                    <li><a href="/">Side Tables</a></li>
+                    <li><Link to="/product">Coffee Tables</Link></li>
+                    <li><Link to="/product">Coffee Table Sets</Link></li>
+                    <li><Link to="/product">Nesting Table Sets</Link></li>
+                    <li><Link to="/product">Trunks</Link></li>
+                    <li><Link to="/product">Side Tables</Link></li>
                    </ul>
-                   <h5 className="h5"><a href="/"></a>End Tables</h5>
+                   <h5 className="h5"><Link to="/product"></Link>End Tables</h5>
 
                  </div> 
                
 
                <div id="d5">
-               <h5 className="h5"><a href="/">Dinning Sets</a></h5>
+               <h5 className="h5"><Link to="/product">Dinning Sets</Link></h5>
                <ul>
-                   <li><a href="/">4 Seater</a></li>
-                   <li><a href="/">6 Seaters</a></li>
-                   <li><a href="/">8 Seaters</a></li>
-                   <li><a href="/">2 Seaters</a></li>
-                   <li><a href="/">Dinning Chairs</a></li>
-                   <li><a href="/">Dinning Tables</a></li>
-                   <li><a href="/">Crockery Units</a></li>
+                   <li><Link to="/product">4 Seater</Link></li>
+                   <li><Link to="/product">6 Seaters</Link></li>
+                   <li><Link to="/product">8 Seaters</Link></li>
+                   <li><Link to="/product">2 Seaters</Link></li>
+                   <li><Link to="/product">Dinning Chairs</Link></li>
+                   <li><Link to="/product">Dinning Tables</Link></li>
+                   <li><Link to="/product">Crockery Units</Link></li>
                </ul>
 
                </div>
                <div id="d6">
-               <h5 className="h5"><a href="/">Bar Furniture</a></h5>
-               <h5 className="h5"><a href="/">Bar Cabinate</a></h5>
-               <h5 className="h5"><a href="/">Bar Trolley</a></h5>
+               <h5 className="h5"><Link to="/product">Bar Furniture</Link></h5>
+               <h5 className="h5"><Link to="/product">Bar Cabinate</Link></h5>
+               <h5 className="h5"><Link to="/product">Bar Trolley</Link></h5>
            </div>
                
              </div>
@@ -115,62 +115,62 @@ const handleChange=(e)=>{
 
        <div id="main_div">
        <Link id="button"  to="/product">Mattress</Link>
-       <div id="arif2">
+       <div id="asim2">
          <div id="b">
             <div className="div" id="d1">
-                <h5 className="h5"><a href="/">King Size</a></h5>
+                <h5 className="h5"><Link to="/product">King Size</Link></h5>
                     <ul>
-                       <li><a href="/">King Size</a></li>
-                       <li><a href="">Foam</a></li>
-                        <li><a href="/">Spring</a></li>
-                        <li><a href="/">Latex</a></li>
-                         <li><a href="/">Coir</a></li>
+                       <li><Link to="/product">King Size</Link></li>
+                       <li><Link to="">Foam</Link></li>
+                        <li><Link to="/product">Spring</Link></li>
+                        <li><Link to="/product">Latex</Link></li>
+                         <li><Link to="/product">Coir</Link></li>
                        
                         
                     </ul>
                     </div>
                     <div  id="d2">
-                     <h5 className="h5"><a href="/">Queen Size</a></h5>
+                     <h5 className="h5"><Link to="/product">Queen Size</Link></h5>
                      <ul>
-                        <li><a href="/">Queen Size</a></li>
-                        <li><a href="/">Foam</a></li>
-                        <li><a href="/">Soring</a></li>
-                        <li><a href="/">Latex</a></li>
-                        <li><a href="/">Coir</a></li>
+                        <li><Link to="/product">Queen Size</Link></li>
+                        <li><Link to="/product">Foam</Link></li>
+                        <li><Link to="/product">Soring</Link></li>
+                        <li><Link to="/product">Latex</Link></li>
+                        <li><Link to="/product">Coir</Link></li>
                     
                     </ul>
                  </div>
            <div id="d3">
-              <h5 className="h5"><a href="/">Single</a></h5>
+              <h5 className="h5"><Link to="/product">Single</Link></h5>
               <ul>
-             <li><a href="/">Foam</a></li>
-             <li><a href="/">Soring</a></li>
-             <li><a href="/">Latex</a></li>
-             <li><a href="/">Coir</a></li>
+             <li><Link to="/product">Foam</Link></li>
+             <li><Link to="/product">Soring</Link></li>
+             <li><Link to="/product">Latex</Link></li>
+             <li><Link to="/product">Coir</Link></li>
               </ul>
               </div>
               <div id="d4">
-              <h5 className="h5"><a href="/"></a>Foldable</h5>
+              <h5 className="h5"><Link to="/product"></Link>Foldable</h5>
               <ul>
-               <li><a href="/">King Size</a></li>
-               <li><a href="/">Queen Size</a></li>
-               <li><a href="/">Single</a></li>
-               <li><a href="/">Crib Mattress</a></li>
-               <li><a href="/">Pillows</a></li>
-               <li><a href="/">Bed Wedges</a></li>
+               <li><Link to="/product">King Size</Link></li>
+               <li><Link to="/product">Queen Size</Link></li>
+               <li><Link to="/product">Single</Link></li>
+               <li><Link to="/product">Crib Mattress</Link></li>
+               <li><Link to="/product">Pillows</Link></li>
+               <li><Link to="/product">Bed Wedges</Link></li>
               </ul>
-              <h5 className="h5"><a href="/"></a>Plus Size</h5>
+              <h5 className="h5"><Link to="/product"></Link>Plus Size</h5>
             </div>
           <div id="d5">
-          <h5 className="h5"><a href="/">Toppers</a></h5>
+          <h5 className="h5"><Link to="/product">Toppers</Link></h5>
           <ul>
-              <li><a href="/">King Size</a></li>
-              <li><a href="/">Queen Size</a></li>
-              <li><a href="/">Single</a></li>
-              <li><a href="/">Protectors</a></li>
-              <li><a href="/">King Size</a></li>
-              <li><a href="/">Single</a></li>
-              <li><a href="/">Mattress Care</a></li>
+              <li><Link to="/product">King Size</Link></li>
+              <li><Link to="/product">Queen Size</Link></li>
+              <li><Link to="/product">Single</Link></li>
+              <li><Link to="/product">Protectors</Link></li>
+              <li><Link to="/product">King Size</Link></li>
+              <li><Link to="/product">Single</Link></li>
+              <li><Link to="/product">Mattress Care</Link></li>
           </ul>
           </div>
          
@@ -185,78 +185,78 @@ const handleChange=(e)=>{
 
    <div id="main_div">
    <Link id="button"  to="/product">Home Decor</Link>
-   <div id="arif3">
+   <div id="asim3">
      <div id="b">
         <div className="div" id="d1">
-            <h5 className="h5"><a href="/">Vases</a></h5>
+            <h5 className="h5"><Link to="/product">Vases</Link></h5>
                 <ul>
-                   <li><a href="/">Figurines</a></li>
-                   <li><a href="/">Collectibles</a></li>
-                    <li><a href="/">Photo Frames</a></li>
-                    <li><a href="/">Single</a></li>
-                     <li><a href="/">Collage</a></li>
-                    <li><a href="/">Clip Photo</a></li>
-                    <li><a href="/">Table Photo</a></li>
-                    <li><a href="/">Screen & Divider</a></li>
-                   <li><a href="/">Folding Divider</a></li>
-                   <li><a href="/">Hanging Divider</a></li>
+                   <li><Link to="/product">Figurines</Link></li>
+                   <li><Link to="/product">Collectibles</Link></li>
+                    <li><Link to="/product">Photo Frames</Link></li>
+                    <li><Link to="/product">Single</Link></li>
+                     <li><Link to="/product">Collage</Link></li>
+                    <li><Link to="/product">Clip Photo</Link></li>
+                    <li><Link to="/product">Table Photo</Link></li>
+                    <li><Link to="/product">Screen & Divider</Link></li>
+                   <li><Link to="/product">Folding Divider</Link></li>
+                   <li><Link to="/product">Hanging Divider</Link></li>
           
                   
                 </ul>
                 </div>
                 <div  id="d2">
-                 <h5 className="h5"><a href="/">Table Organizer</a></h5>
+                 <h5 className="h5"><Link to="/product">Table Organizer</Link></h5>
                  <ul>
-                    <li><a href="/">Table Clocks</a></li>
-                    <li><a href="/">Decorative Boxes</a></li>
-                    <li><a href="/">Desk Organizers</a></li>
-                    <li><a href="/">Magazine Racks</a></li>
-                    <li><a href="/">Pen Stands</a></li>
-                    <li><a href="/">Bookends</a></li>
-                    <li><a href="/">Festive Decor</a></li>
-                    <li><a href="/">Torans</a></li>
-                    <li><a href="/">Rangolis</a></li>
-                    <li><a href="/">Christmas</a></li>
+                    <li><Link to="/product">Table Clocks</Link></li>
+                    <li><Link to="/product">Decorative Boxes</Link></li>
+                    <li><Link to="/product">Desk Organizers</Link></li>
+                    <li><Link to="/product">Magazine Racks</Link></li>
+                    <li><Link to="/product">Pen Stands</Link></li>
+                    <li><Link to="/product">Bookends</Link></li>
+                    <li><Link to="/product">Festive Decor</Link></li>
+                    <li><Link to="/product">Torans</Link></li>
+                    <li><Link to="/product">Rangolis</Link></li>
+                    <li><Link to="/product">Christmas</Link></li>
                  
                 </ul>
              </div>
        <div id="d3">
-          <h5 className="h5"><a href="/">Prayer Essentials</a></h5>
+          <h5 className="h5"><Link to="/product">Prayer Essentials</Link></h5>
           <ul>
-           <li><a href="/">Pooja Meralwire</a></li>
-           <li><a href="/">Haldi Kumkum Box</a></li>
-           <li><a href="/">Diyas</a></li>
-           <li><a href="/">Incense Folder</a></li>
-           <li><a href="/">Bells</a></li>
-           <li><a href="/">Prayer Mats</a></li>
-           <li><a href="/">Spritual</a></li>
-           <li><a href="/">Pooja Shelves</a></li>
+           <li><Link to="/product">Pooja Meralwire</Link></li>
+           <li><Link to="/product">Haldi Kumkum Box</Link></li>
+           <li><Link to="/product">Diyas</Link></li>
+           <li><Link to="/product">Incense Folder</Link></li>
+           <li><Link to="/product">Bells</Link></li>
+           <li><Link to="/product">Prayer Mats</Link></li>
+           <li><Link to="/product">Spritual</Link></li>
+           <li><Link to="/product">Pooja Shelves</Link></li>
           </ul>
           </div>
           <div id="d4">
-          <h5 className="h5"><a href="/"></a>Candles</h5>
+          <h5 className="h5"><Link to="/product"></Link>Candles</h5>
           <ul>
-           <li><a href="/">Decorative</a></li>
-           <li><a href="/">Scented</a></li>
-           <li><a href="/">Tea Lights</a></li>
-           <li><a href="/">Home Fragrances</a></li>
-           <li><a href="/">Candle Stands</a></li>
-           <li><a href="/">Candle Holders</a></li>
-           <li><a href="/">Tea Light Holders</a></li>
-           <li><a href="/">Pots & Planters</a></li>
-           <li><a href="/">Desk Pots</a></li>
+           <li><Link to="/product">Decorative</Link></li>
+           <li><Link to="/product">Scented</Link></li>
+           <li><Link to="/product">Tea Lights</Link></li>
+           <li><Link to="/product">Home Fragrances</Link></li>
+           <li><Link to="/product">Candle Stands</Link></li>
+           <li><Link to="/product">Candle Holders</Link></li>
+           <li><Link to="/product">Tea Light Holders</Link></li>
+           <li><Link to="/product">Pots & Planters</Link></li>
+           <li><Link to="/product">Desk Pots</Link></li>
           </ul>
-          <h5 className="h5"><a href="/"></a>Plus Size</h5>
+          <h5 className="h5"><Link to="/product"></Link>Plus Size</h5>
         </div>
       <div id="d5">
-      <h5 className="h5"><a href="/">Natural Plants</a></h5>
+      <h5 className="h5"><Link to="/product">Natural Plants</Link></h5>
       <ul>
-          <li><a href="/">Indoor</a></li>
-          <li><a href="/">Flowering</a></li>
-          <li><a href="/">Cacti & Succulents</a></li>
-          <li><a href="/">Bonsai</a></li>
-          <li><a href="/">Plant Bundles</a></li>
-          <li><a href="/">Air Purifier</a></li>
+          <li><Link to="/product">Indoor</Link></li>
+          <li><Link to="/product">Flowering</Link></li>
+          <li><Link to="/product">Cacti & Succulents</Link></li>
+          <li><Link to="/product">Bonsai</Link></li>
+          <li><Link to="/product">Plant Bundles</Link></li>
+          <li><Link to="/product">Air Purifier</Link></li>
          
       </ul>
       </div>
@@ -269,76 +269,76 @@ const handleChange=(e)=>{
 
 <div id="main_div">
 <Link id="button"  to="/product">Furnishing</Link>
-<div id="arif4">
+<div id="asim4">
   <div id="b">
      <div className="div" id="d1">
-         <h5 className="h5"><a href="/">Bed Sheets</a></h5>
+         <h5 className="h5"><Link to="/product">Bed Sheets</Link></h5>
              <ul>
-                <li><a href="/">Single Bed Sheets</a></li>
-                <li><a href="/">Queen Bed</a></li>
-                 <li><a href="/">Bedsheets</a></li>
-                 <li><a href="/">Bedding Sets</a></li>
-                  <li><a href="/">Blankets, Quilts & Dohars</a></li>
-                 <li><a href="/">Pillows & Pillow Covers</a></li>
-                 <li><a href="/">Bed Covers</a></li>
-                 <li><a href="/">Diwan Sets</a></li>
-                <li><a href="/">Chair Pads & Covers</a></li>
-                <li><a href="/">Sofa Covers</a></li>
+                <li><Link to="/product">Single Bed Sheets</Link></li>
+                <li><Link to="/product">Queen Bed</Link></li>
+                 <li><Link to="/product">Bedsheets</Link></li>
+                 <li><Link to="/product">Bedding Sets</Link></li>
+                  <li><Link to="/product">Blankets, Quilts & Dohars</Link></li>
+                 <li><Link to="/product">Pillows & Pillow Covers</Link></li>
+                 <li><Link to="/product">Bed Covers</Link></li>
+                 <li><Link to="/product">Diwan Sets</Link></li>
+                <li><Link to="/product">Chair Pads & Covers</Link></li>
+                <li><Link to="/product">Sofa Covers</Link></li>
               
              </ul>
              </div>
              <div  id="d2">
-              <h5 className="h5"><a href="/">Bath</a></h5>
+              <h5 className="h5"><Link to="/product">Bath</Link></h5>
               <ul>
-                 <li><a href="/">Bath Towels</a></li>
-                 <li><a href="/">Hand & Face Towels</a></li>
-                 <li><a href="/">Beach Towels</a></li>
-                 <li><a href="/">Towels Set</a></li>
-                 <li><a href="/">Bath Rugs</a></li>
-                 <li><a href="/">Bath Robes</a></li>
-                 <li><a href="/">Bathroom Accessories</a></li>
-                 <li><a href="/">Shower Curtains</a></li>
+                 <li><Link to="/product">Bath Towels</Link></li>
+                 <li><Link to="/product">Hand & Face Towels</Link></li>
+                 <li><Link to="/product">Beach Towels</Link></li>
+                 <li><Link to="/product">Towels Set</Link></li>
+                 <li><Link to="/product">Bath Rugs</Link></li>
+                 <li><Link to="/product">Bath Robes</Link></li>
+                 <li><Link to="/product">Bathroom Accessories</Link></li>
+                 <li><Link to="/product">Shower Curtains</Link></li>
               
              </ul>
           </div>
     <div id="d3">
-       <h5 className="h5"><a href="/">Home Décor</a></h5>
+       <h5 className="h5"><Link to="/product">Home Décor</Link></h5>
        <ul>
-        <li><a href="/">Plants & Planters</a></li>
-        <li><a href="/">Aromas & Candles</a></li>
-        <li><a href="/">Clocks</a></li>
-        <li><a href="/">Mirrors</a></li>
-        <li><a href="/">Wall Décor</a></li>
-        <li><a href="/">Festive Decor</a></li>
-        <li><a href="/">Pooja Essentials</a></li>
-        <li><a href="/">Wall Shelves</a></li>
-        <li><a href="/">Fountains</a></li>
-        <li><a href="/">Showpieces & Vases</a></li>
+        <li><Link to="/product">Plants & Planters</Link></li>
+        <li><Link to="/product">Aromas & Candles</Link></li>
+        <li><Link to="/product">Clocks</Link></li>
+        <li><Link to="/product">Mirrors</Link></li>
+        <li><Link to="/product">Wall Décor</Link></li>
+        <li><Link to="/product">Festive Decor</Link></li>
+        <li><Link to="/product">Pooja Essentials</Link></li>
+        <li><Link to="/product">Wall Shelves</Link></li>
+        <li><Link to="/product">Fountains</Link></li>
+        <li><Link to="/product">Showpieces & Vases</Link></li>
        </ul>
        </div>
        <div id="d4">
-       <h5 className="h5"><a href="/"></a>Kitchen & Table</h5>
+       <h5 className="h5"><Link to="/product"></Link>Kitchen & Table</h5>
        <ul>
-        <li><a href="/">Table Runners</a></li>
-        <li><a href="/">Dinnerware & Serveware</a></li>
-        <li><a href="/">Cups and Mugs</a></li>
-        <li><a href="/">Bakeware & Cookware</a></li>
-        <li><a href="/">Kitchen Storage & Tools</a></li>
-        <li><a href="/">Bar & Drinkware</a></li>
-        <li><a href="/">Table Covers & Furnishings</a></li>
+        <li><Link to="/product">Table Runners</Link></li>
+        <li><Link to="/product">Dinnerware & Serveware</Link></li>
+        <li><Link to="/product">Cups and Mugs</Link></li>
+        <li><Link to="/product">Bakeware & Cookware</Link></li>
+        <li><Link to="/product">Kitchen Storage & Tools</Link></li>
+        <li><Link to="/product">Bar & Drinkware</Link></li>
+        <li><Link to="/product">Table Covers & Furnishings</Link></li>
        
        </ul>
-       <h5 className="h5"><a href="/"></a>Curtains</h5>
+       <h5 className="h5"><Link to="/product"></Link>Curtains</h5>
      </div>
    <div id="d5">
-   <h5 className="h5"><a href="/">Lamps & Lighting</a></h5>
+   <h5 className="h5"><Link to="/product">Lamps & Lighting</Link></h5>
    <ul>
-       <li><a href="/">Floor Lamps</a></li>
-       <li><a href="/">Ceiling Lamps</a></li>
-       <li><a href="/">Table Lamps</a></li>
-       <li><a href="/">Wall Lamps</a></li>
-       <li><a href="/">Outdoor Lamps</a></li>
-       <li><a href="/">String Lights</a></li>
+       <li><Link to="/product">Floor Lamps</Link></li>
+       <li><Link to="/product">Ceiling Lamps</Link></li>
+       <li><Link to="/product">Table Lamps</Link></li>
+       <li><Link to="/product">Wall Lamps</Link></li>
+       <li><Link to="/product">Outdoor Lamps</Link></li>
+       <li><Link to="/product">String Lights</Link></li>
       
    </ul>
    </div>
@@ -350,81 +350,81 @@ const handleChange=(e)=>{
 
 
 <div id="main_div">
-<a id="button"  href="/">Kitchen & Dining</a>
-<div id="arif5" >
+<Link id="button"  to="/product">Kitchen & Dining</Link>
+<div id="asim5" >
   <div id="b">
      <div className="div" id="d1">
-         <h5 className="h5"><a href="/">Serveware</a></h5>
+         <h5 className="h5"><Link to="/product">Serveware</Link></h5>
              <ul>
-                <li><a href="/">Serving Trays</a></li>
-                <li><a href="/">Serving Bowls</a></li>
-                 <li><a href="/">Serving Baskets</a></li>
-                 <li><a href="/">Appetizer Platters</a></li>
-                  <li><a href="/">Cake Stands</a></li>
-                 <li><a href="/">Tray Sets</a></li>
-                 <li><a href="/">Cheese Boards</a></li>
-                 <li><a href="/">Cloche</a></li>
-                <li><a href="/">Serving Dishes</a></li>
-                <li><a href="/">Cookware</a></li>
-                <li><a href="/">Pots and Pans</a></li>
-                <li><a href="/">Spatulas</a></li>
+                <li><Link to="/product">Serving Trays</Link></li>
+                <li><Link to="/product">Serving Bowls</Link></li>
+                 <li><Link to="/product">Serving Baskets</Link></li>
+                 <li><Link to="/product">Appetizer Platters</Link></li>
+                  <li><Link to="/product">Cake Stands</Link></li>
+                 <li><Link to="/product">Tray Sets</Link></li>
+                 <li><Link to="/product">Cheese Boards</Link></li>
+                 <li><Link to="/product">Cloche</Link></li>
+                <li><Link to="/product">Serving Dishes</Link></li>
+                <li><Link to="/product">Cookware</Link></li>
+                <li><Link to="/product">Pots and Pans</Link></li>
+                <li><Link to="/product">Spatulas</Link></li>
               
              </ul>
              </div>
              <div  id="d2">
-              <h5 className="h5"><a href="/">Dinnerware</a></h5>
+              <h5 className="h5"><Link to="/product">Dinnerware</Link></h5>
               <ul>
-                 <li><a href="/">Dinnerware Sets</a></li>
-                 <li><a href="/">Dinner Bowls</a></li>
-                 <li><a href="/">Dinner Plates</a></li>
-                 <li><a href="/">Sid Plates</a></li>
-                 <li><a href="/">Teaware</a></li>
-                 <li><a href="/">Tea Cups and</a></li>
-                 <li><a href="/">Saucer Sets</a></li>
-                 <li><a href="/">Tea Pots</a></li>
-                 <li><a href="/">Coffee Mugs</a></li>
-                 <li><a href="/">Coffee Tumblers</a></li>
+                 <li><Link to="/product">Dinnerware Sets</Link></li>
+                 <li><Link to="/product">Dinner Bowls</Link></li>
+                 <li><Link to="/product">Dinner Plates</Link></li>
+                 <li><Link to="/product">Sid Plates</Link></li>
+                 <li><Link to="/product">Teaware</Link></li>
+                 <li><Link to="/product">Tea Cups and</Link></li>
+                 <li><Link to="/product">Saucer Sets</Link></li>
+                 <li><Link to="/product">Tea Pots</Link></li>
+                 <li><Link to="/product">Coffee Mugs</Link></li>
+                 <li><Link to="/product">Coffee Tumblers</Link></li>
              
               
              </ul>
           </div>
     <div id="d3">
-       <h5 className="h5"><a href="/">Bakeware</a></h5>
+       <h5 className="h5"><Link to="/product">Bakeware</Link></h5>
        <ul>
-        <li><a href="/">Tins and Moulds</a></li>
-        <li><a href="/">Baking Dishes</a></li>
-        <li><a href="/">Knives & Cutlery</a></li>
-        <li><a href="/">Knife Sets</a></li>
-        <li><a href="/">Serving Cutlery</a></li>
-        <li><a href="/">Cutlery Holders</a></li>
+        <li><Link to="/product">Tins and Moulds</Link></li>
+        <li><Link to="/product">Baking Dishes</Link></li>
+        <li><Link to="/product">Knives & Cutlery</Link></li>
+        <li><Link to="/product">Knife Sets</Link></li>
+        <li><Link to="/product">Serving Cutlery</Link></li>
+        <li><Link to="/product">Cutlery Holders</Link></li>
        
        </ul>
        </div>
       
    <div id="d5">
-   <h5 className="h5"><a href="/">Drinkware</a></h5>
+   <h5 className="h5"><Link to="/product">Drinkware</Link></h5>
    <ul>
-       <li><a href="/">Everyday Glasses</a></li>
-       <li><a href="/">Jugs</a></li>
-       <li><a href="/">Bottles</a></li>
-       <li><a href="/">Sippers</a></li>
-       <li><a href="/">Wine Glasses</a></li>
+       <li><Link to="/product">Everyday Glasses</Link></li>
+       <li><Link to="/product">Jugs</Link></li>
+       <li><Link to="/product">Bottles</Link></li>
+       <li><Link to="/product">Sippers</Link></li>
+       <li><Link to="/product">Wine Glasses</Link></li>
       
    </ul>
    </div>
    <div id="d6">
-   <h5 className="h5"><a href="/">Top Brands</a></h5>
+   <h5 className="h5"><Link to="/product">Top Brands</Link></h5>
    <ul>
-    <li><a href="/">Paddington Wood</a></li>
-    <li><a href="/">Claire Velvet</a></li>
-    <li><a href="/">Gracia Fabric</a></li>
-    <li><a href="/">Catalina Fabric</a></li>
-    <li><a href="/">Edwina</a></li>
-    <li><a href="/">Astra</a></li>
-    <li><a href="/">Minerva</a></li>
+    <li><Link to="/product">Paddington Wood</Link></li>
+    <li><Link to="/product">Claire Velvet</Link></li>
+    <li><Link to="/product">Gracia Fabric</Link></li>
+    <li><Link to="/product">Catalina Fabric</Link></li>
+    <li><Link to="/product">Edwina</Link></li>
+    <li><Link to="/product">Astra</Link></li>
+    <li><Link to="/product">Minerva</Link></li>
   
 </ul>
-<h5 className="h5"><a href="/">Home & Bath</a></h5>
+<h5 className="h5"><Link to="/product">Home & Bath</Link></h5>
 </div>
  </div>
 </div>
@@ -462,27 +462,27 @@ const handleChange=(e)=>{
 
 
         <div id="main_div">
-        <a href=""><i className="fa-solid fa-user"  id="i2" ></i></a>
-        <h5 id="profile_tag"><a  href="/">Profile</a></h5>
-        <div id="arif7">
+        <Link to=""><i className="fa-solid fa-user"  id="i2" ></i></Link>
+        <h5 id="profile_tag"><Link  >Profile</Link></h5>
+        <div id="asim7">
           <div id="b">
              <div className="div" id="d1">
-                 <h5 id="lh5">Welcome {userName.name}</h5>
+                 <h5 id="lh5">Welcome {localStorage.getItem("loggedIn")?userName.name:""}</h5>
                  <p id="lp">To access account and manage order</p>
            
-              {userName===""?<Link id="logincss" to="/login">
+              {!localStorage.getItem("loggedIn")?<Link id="logincss" to="/login">
               <button id="ls" style={{width:"80px",height:"50px"}} >LOGIN / SIGNUP</button>
-              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");navigate("/")}}>Logout</button>
+              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");localStorage.removeItem("loggedIn");navigate("/product")}}>Logout</button>
                 }
                  
               
                  <br/>
                  <>
                      <ul>
-                        <li><a href="">Order</a></li>
-                        <li><a href="/">Wishlist</a></li>
-                         <li><a href="/">Gift card</a></li>
-                         <li><a href="/">Contact us</a></li>
+                        <li><Link >Order</Link></li>
+                        <li><Link >Wishlist</Link></li>
+                         <li><Link >Gift card</Link></li>
+                         <li><Link >Contact us</Link></li>
                       <li>Furniture_Now   <Link to="/admin"> <button id="insider_span">Admin</button></Link> </li> 
                       
                      </ul>
@@ -510,14 +510,14 @@ const handleChange=(e)=>{
     </div>
 
     <div>
-        <a href="/"><i className="fa-solid fa-heart font"  id="i1"><span id="count_wish">&nbsp;</span></i></a> 
+        <Link ><i className="fa-solid fa-heart font"  id="i1"><span id="count_wish">&nbsp;</span></i></Link> 
         <br/>
-      <a id="wishlist_tag" href="/">Whishlist</a>
+      <Link id="wishlist_tag" >Whishlist</Link>
     </div>
 
     <div>
-      <a id="count" href="">  <i className="fa-solid fa-bag-shopping font " id="i1"><span  id="count_cart">&nbsp;</span></i></a>
-       <br/>  <a id="cart_tag" href="">Bag</a>
+      <Link id="count" >  <i className="fa-solid fa-bag-shopping font " id="i1"><span  id="count_cart">&nbsp;</span></i></Link>
+       <br/>  <Link id="cart_tag" >Bag</Link>
     </div>
 </div>
 

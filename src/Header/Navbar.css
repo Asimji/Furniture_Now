@@ -221,7 +221,7 @@ body{
     color:hotpink;
 }
 
-#arif1,#arif2,#arif3,#arif4,#arif5,#arif7{
+#asim1,#asim2,#asim3,#asim4,#asim5,#asim7{
     background-color:white;
     /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
@@ -240,28 +240,28 @@ body{
     margin-top: 36px;
 }
 
-#arif1{
+#asim1{
      
      margin-left: -80px;
 }
-#arif2{
+#asim2{
   
     margin-left: -50px;
 }
-#arif3{
+#asim3{
     
     margin-left: -170px;
 }
-#arif4{
+#asim4{
  
     margin-left: -230px;
 }
-#arif5{
+#asim5{
 
     margin-left: -290px;
 }
 
-#arif7{
+#asim7{
     margin-left: -150px;
     text-align: left;
     margin-top: 10px;
@@ -450,6 +450,9 @@ sup{
     .parent-box-2{
         margin-left: 3%;
     }
+   .parent-box-2 .div1{
+    display:none
+   }
 
     .menu_div{
         width:0;
