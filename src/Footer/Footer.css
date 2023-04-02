@@ -21,6 +21,7 @@
   
   ul {
     list-style: none;
+    cursor: pointer;
   }
   
   .footer {
@@ -63,6 +64,7 @@
   .footer-col ul li a:hover {
     color: #000000;
     padding-left: 8px;
+    cursor: pointer;
   }
   .footer-col .social-links a {
     display: inline-block;
@@ -75,7 +77,11 @@
     border-radius: 50%;
     color: #24262b;
     transition: all 0.5s ease;
+    cursor: pointer;
    
+  }
+  .footer-col img {
+    cursor: pointer;
   }
   .footer-col .social-links{
    
@@ -91,6 +97,7 @@
   .footer-col .social-links a:hover {
     color: #ffffff;
     background-color: #000000;
+    cursor: pointer;
 
   }
   
@@ -108,7 +115,7 @@
   .footer-promise img {
     width: 105%;
     height: 65%;
-    margin-right: 15px;
+    margin-right: 20px;
   }
   
   .footer-promise strong{
