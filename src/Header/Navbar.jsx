@@ -472,7 +472,7 @@ const handleChange=(e)=>{
            
               {!localStorage.getItem("loggedIn")?<Link id="logincss" to="/login">
               <button id="ls" style={{width:"80px",height:"50px"}} >LOGIN / SIGNUP</button>
-              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");localStorage.removeItem("loggedIn");navigate("/product")}}>Logout</button>
+              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");localStorage.removeItem("loggedIn");navigate("/")}}>Logout</button>
                 }
                  
               
