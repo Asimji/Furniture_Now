@@ -1,5 +1,4 @@
 import './App.css';
-import Product from './Components/product';
 import Footer from './Footer/Footer';
 import Navbar from './Header/Navbar';
 import Router from './RouterComponent/Router';
