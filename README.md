@@ -1,6 +1,6 @@
 Project - Furniture_Now
 
-1) HomePage with Describe the Overview of the Website
+1) HomePage with Describe the Overview of the Website    Link-https://furniture89.netlify.app/
 2) Login and Logout Functionality
 3) Product Details Page with Pagination
 4) Filter Functionality 
