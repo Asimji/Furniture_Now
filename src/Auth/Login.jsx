@@ -14,26 +14,13 @@ export default function Login(){
 
     const handleSubmit=(e)=>{
      e.preventDefault();
-     const loggedUser=JSON.parse(localStorage.getItem("input"))
-     if(!loggedUser){
-        alert("Please Register")
-       
-        navigate("/register")
-     }
-     if(user.email===loggedUser.email && user.password===loggedUser.password){
-        localStorage.setItem("loggedIn",true)
-         navigate("/")
-     }
-     else{
-        alert("Incorrect Email/Password")
-     }
 
     }
    
 
     return <div style={{height:"600px"}}>
-  <div className="lok_login_Container">
-            <img src="https://hometown.gumlet.io/media/product/36/5453/20057/1.jpg?mode=fill&w=273&h=273&dpr=1.0"
+  <div className="login_Container">
+   <img src="https://hometown.gumlet.io/media/product/36/5453/20057/1.jpg?mode=fill&w=273&h=273&dpr=1.0"
                 alt="" style={{height:"50%"}} />
             <div>
                 <div>
