@@ -1,91 +1,78 @@
-import { useContext, useEffect, useState } from "react"
-import  axios  from "axios"
-import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box, Center} from '@chakra-ui/react'
+import { memo, useContext, useEffect, useState } from "react"
+import { Card, CardBody, CardFooter,Image,Stack,Heading,Divider,ButtonGroup,Button, SimpleGrid,Text, Box, Center, Flex} from '@chakra-ui/react'
 
 import Pagination from "./pagination"
-import { Link } from "react-router-dom"
+import { Link, useLocation, useSearchParams } from "react-router-dom"
 import { SearchContext } from "../Context/SearchContext"
-import "./product.css"
+import { useDispatch, useSelector } from "react-redux"
+import { getProducts } from "../redux/productReducer/action"
+import Sidebar from "./Sidebar"
+import Footer from "../Footer/Footer"
+import Navbar from "../Header/Navbar"
 
 
 
-export default function Product(){
+const Product=()=>{
+  
+  const [searchParams,setSearchParams]=useSearchParams()
+  const location=useLocation()  
+  const store=useSelector(store=>store.productReducer.products)
+  const dispatch=useDispatch()
+  
+  const initPage=searchParams.get('page')
 
- const [data,setData]=useState([])
+  const [page,setPage]=useState(initPage||1);
+  const value=useContext(SearchContext)
+ console.log(searchParams)
  
-
- const [page,setPage]=useState(1);
- const [count,setcount]=useState("")
- const [SelValue,setSelValue]=useState("")
-
- const value=useContext(SearchContext)
-
-
- 
- 
-
-const handleSelect=(e)=>{
-  setSelValue(e.target.value)
-  console.log(SelValue)
+ const obj={
+  params:{
+      page:searchParams.get('page'),
+      limit:searchParams.get('limit'),
+      type:searchParams.getAll('type'),
+      sortBy:searchParams.get('order') && 'price',
+      sortOrder:searchParams.get('order') 
+  }
 }
 
-const handleAdd=()=>{
-  alert("Product Added Successfully")
-}
+
+
  
 const limit=6;
+const count=Math.ceil(24/limit)
+
+console.log(location)
 
 useEffect(()=>{
-  if(SelValue===""){
-  ( axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}`,{
-      page:page,
+dispatch(getProducts(obj)) 
 
-    }).then((res)=>{setData(res.data);setcount(res.data.length)}).catch((e)=>console.log(e)))
-  }
-else {
-(
-    axios.get(`http://localhost:3000/data?_page=${page}&_limit=${limit}&type=${SelValue}`,{
-      page:page,
 
-    }).then((res)=>{setData(res.data);console.log(res);setcount(res.data.length)}).catch((e)=>console.log(e))
-  )
-}
-   
-}, [page,SelValue])
 
-console.log(count)
+}, [location.search])
 
 const handlePage=(page)=>{
   setPage(page)
 }
 
     return (
-        <Box mt={90} >
-
-    <div style={{float:"left",marginLeft:"85px",width:"200px"}}>
-
-     <select onChange={handleSelect} style={{width:"100%"}}>
-      <option value="">Filter By Category</option>
-      <option value="dining">Dining Set</option>
-      <option value="bed">Bed</option>
-      <option value="sofa">Sofa</option>
-      <option value="chair">Chair</option>
-      </select> 
-    </div>
- 
-      <br />
-       
-     <SimpleGrid columns={3} spacing={10} mt={10} className="card1">
-          {data.filter((user)=>user.type.toLowerCase().includes(value.query)||user.brand.toLowerCase().includes(value.query)).map((item)=>{
+        <Box mt={20} mb={'20vh'}>
+<Navbar/>
+          <Flex gap={'10vh'}>
+    <Box mt={'3vh'} ml={'5vh'} border={'1px solid gray'} p={'2vh'} w={'50vh'} h={'80vh'}>
+      <Sidebar page={page} limit={limit}/>
+    </Box>
+    <Box>
+       <SimpleGrid columns={[1,2,3]} spacing={5}  mr={'5vh'} >
+          {store.map((item)=>{
               return (
-                  <Card maxW='sm' key={item.id} m={5}> 
+                  <Card key={item._id} m={5}  w={'50vh'} textAlign={'left'}> 
         <CardBody>
           <Image
             src={item.image}
             alt={item.title}
             borderRadius='lg'
           />
-          <Stack mt='6' spacing='3'>
+          <Stack >
             <Heading size='md'> {item.brand}</Heading>
             <Text>
               {item.description}
@@ -99,15 +86,15 @@ const handlePage=(page)=>{
         <Center mt={5}>
 
         <CardFooter>
-          <ButtonGroup spacing='50'  >
-            <Link to={`/product/${item.id}`}>
-            <Button variant='solid' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer" 
+          <ButtonGroup spacing='10'  >
+            <Link to={`/product/${item._id}`}>
+            <Button variant='solid' colorScheme='blue'  borderRadius="10px" border="none" cursor="pointer" 
             >
               View More
             </Button>
               </Link>
-            <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer" 
-             onClick={handleAdd}>
+            <Button variant='ghost' colorScheme='blue'borderRadius="10px" border="none" cursor="pointer" 
+             >
               Add to cart
             </Button>
           </ButtonGroup>
@@ -118,7 +105,15 @@ const handlePage=(page)=>{
           })}
 
                     </SimpleGrid>
-                    <Pagination handlePage={handlePage} current_page={page} count={count}/>
+                    <Box float={"right"} ml={'9vh'} mt={'2vh'}>
+             <Pagination handlePage={handlePage} current_page={page} count={count}/>
+                    </Box>
+       </Box>
+          </Flex>
+      
+    <Footer/>
                     </Box>
         )
 }
+
+export default memo(Product)

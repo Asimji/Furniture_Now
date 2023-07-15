@@ -1,35 +1,38 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import {
 Button,Text,Heading,Image,Box,SimpleGrid
 } from "@chakra-ui/react"
 import "./SinglePage.css"
+import Footer from "../Footer/Footer"
+import Navbar from "../Header/Navbar"
 
 
 export default function SinglePage(){
 
     
-    const {id}=useParams()
+    const {_id}=useParams()
     const [user,setuser]=useState("")
-
+    const navigate=useNavigate()
+console.log(_id)
     useEffect(()=>{
-        axios.get(`http://localhost:3000/data/${id}`).then((res)=>setuser(res.data)).catch((e)=>console.log(e))
-    },[id])
+        axios.get(`${process.env.REACT_APP_URL}/products/${_id}`).then((res)=>{console.log(res);setuser(res.data.product)}).catch((e)=>console.log(e))
+    },[_id])
 
 
 
-    return  <Box mt={100}>
-  
+    return  <Box mt={20}>
+  <Navbar/>
                  <SimpleGrid columns={2}  className="card"> 
       
 
-      <Box >
+      <Box ml={'10vh'}>
          <Image
            src={user.image}
            alt={user.title}
            borderRadius='lg'
-           w="600px"
+           w="80vh"
            />
            </Box>
 
@@ -53,7 +56,7 @@ export default function SinglePage(){
            </SimpleGrid>
            <SimpleGrid columns={2} gap={10} mt={10} pl={20} pr={20}>
         <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer"
-        onClick={()=>{alert("Product Added Successfully")}}>
+        onClick={()=>{navigate("/cart")}}>
         ADD TO CART  </Button>
         <Button borderRadius="10px"  border="none" cursor="pointer">WISHLIST</Button>
            </SimpleGrid>
@@ -61,18 +64,18 @@ export default function SinglePage(){
            <div style={{marginTop:"10px"}}>
                <div style={{textAlign:"left",marginLeft:"10px",padding:"5px"}} >
               
-               <Text class="fa fa-bicycle" style={{fontSize:"18px"}}> Delivery Option </Text>
+               <Text className="fa fa-bicycle" style={{fontSize:"18px"}}> Delivery Option </Text>
                 </div>
         
                 <div style={{textAlign:"left",marginLeft:"10px",padding:"10px",border:"none"}} >
-                    <button class="fa fa-car" style={{fontSize:"18px",color:"red"}}> 211016 ✓ &nbsp;    Change</button>
+                    <button className="fa fa-car" style={{fontSize:"18px",color:"red"}}> 211016 ✓ &nbsp;    Change</button>
                 </div>
                 <div style={{textAlign:"left",marginLeft:"10px",padding:"5px"}} >
         
-                    <Text class="fa fa-rocket" style={{fontSize:"18px"}}> Get it by Wed, Mar 01</Text>
+                    <Text className="fa fa-rocket" style={{fontSize:"18px"}}> Get it by Wed, Mar 01</Text>
                 </div>
                 <div style={{textAlign:"left",marginLeft:"10px",padding:"5px"}} >
-                 <Text class="fa fa-book" style={{fontSize:"18px"}}> Pay on delivery available</Text>
+                 <Text className="fa fa-book" style={{fontSize:"18px"}}> Pay on delivery available</Text>
                 </div>
                  <Text style={{fontSize:"18px",textAlign:"left",marginLeft:"10px"}}>Easy 14 days return & exchange available  <span id="uni"> <a href="./">More Info</a></span></Text>
                
@@ -86,6 +89,6 @@ export default function SinglePage(){
      </SimpleGrid>
            
 
-                
+             <Footer/>   
                    </Box>
 }
