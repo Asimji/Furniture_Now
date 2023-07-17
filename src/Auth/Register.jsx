@@ -1,54 +1,27 @@
-import {useState} from "react"
-import { useNavigate } from "react-router-dom";
-import "./Register.css"
+import {Box, Image, Button, Input, Flex, Heading} from "@chakra-ui/react"
 
 export default function Register(){
 
-    const navigate=useNavigate();
-    const [user,setUser]=useState({
-        name:"",
-        email:"",
-        password:""
-    })
+  
 
-    const handleSubmit=(e)=>{
-     e.preventDefault();
-     console.log(user)
-     localStorage.setItem("input",JSON.stringify(user))
-     navigate("/login")
-    }
-
-    return (
-        
-    
-        <div className="singupContainer" style={{marginBottom:"30px"}}>
-        <div>
-            <img src="https://i.pinimg.com/originals/11/c0/0c/11c00c702d268a5a7789e801f995fbcc.gif" alt=""/>
-        </div>
-        <div>
-            <img src="https://media3.giphy.com/media/Ltz1ZA728qKw4mEY94/giphy.gif?cid=ecf05e47nicixk50f9tw42tbeob5ajio9x5f2xst1zyd7zvw&rid=giphy.gif&ct=g"
-                alt="" />
-            <form id="form" onSubmit={handleSubmit}>
-                <input type="text" id="name" placeholder="Full Name" required 
-                 name="name"
-           value={user.name}
-           onChange={(e)=>setUser({...user,name:e.target.value})} />
-                <input type="number" id="age" placeholder="Age" required  />
-                <input type="email" id="email" placeholder="Email" required
-                 name="email"
-                 value={user.email}
-                 onChange={(e)=>setUser({...user,email:e.target.value})}
-                />
-                <input type="number" id="phoneNumber" placeholder="Phone Number" required/>
-                <input type="password" id="password" placeholder="Password" required
-                name="password"
-                value={user.password}
-                onChange={(e)=>setUser({...user,password:e.target.value})}
-                />
-                <input type="submit" value="REGISTER" id="button" required/>
-            </form>
-        </div>
-    </div>
+    return (<Box>
+        <Heading ml={'2vh'} color={'orange.300'}>Welcome Admin !</Heading>
+         
+         <Box height="90vh" display="flex" justifyContent="center" alignItems="center">
+         <Flex direction="column" alignItems="center" border={'1px solid gray'} p='3vh' w={'60vh'}>
+           <Box mb={4} w={'100%'}>
+             <Image
+               src="https://hometown.gumlet.io/media/product/36/5453/20057/1.jpg?mode=fill&w=273&h=273&dpr=1.0"
+               alt="Image"
+               w='100%'
+             />
+           </Box>
+           <Input placeholder="Enter Your Email" mb={2}  />
+           <Input placeholder="Enter Your Password" mb={2} />
+           <Button w='100%' >Sign In</Button>
+         </Flex>
+       </Box>
+         </Box>   
        )     
     
 }

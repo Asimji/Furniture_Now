@@ -9,6 +9,8 @@ import Order from "../Admin/Order";
 import CartPage from "../Components/CartPage";
 import AdminLogin from "../Admin/AdminLogin";
 import AdminPrivate from "./AdminPrivate";
+import EditProduct from "../Admin/EditProduct"
+import LoginPrivate from "./LoginPrivate";
 
 
 export default function Router(){
@@ -19,7 +21,11 @@ export default function Router(){
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/" element={<Home/>} />
-        <Route path="/cart" element={<CartPage/>} />
+        <Route path="/cart" element={
+        <LoginPrivate>
+        <CartPage/>
+        </LoginPrivate>
+        } />
         <Route path='/admin' element=
         {
           <AdminPrivate>
@@ -29,6 +35,7 @@ export default function Router(){
         />
       <Route path='/admin/order' element={<Order/>}/>
       <Route path='/admin/login' element={<AdminLogin/>}/>
+      <Route path='/edit/:id' element={<EditProduct/>}/>
         
     </Routes>
 }
