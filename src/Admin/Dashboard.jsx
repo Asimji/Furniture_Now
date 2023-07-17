@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import { Box, Table, Thead, Tbody, Tr, Th, Td, useBreakpointValue,Flex, Button, Image } from "@chakra-ui/react";
 import {useDispatch, useSelector} from "react-redux"
 import {getAdmin} from "../redux/authReducer/action.js"
+import { Link } from 'react-router-dom';
 const Dashboard = () => {
   const tableSize = useBreakpointValue({ base: "sm", md: "md", lg: "lg" });
 
@@ -46,8 +47,8 @@ dispatch(getAdmin())
             <Td>{item.description}</Td>
             <Td>{item.price}</Td>
             <Td>{item.type}</Td>
-            <Td><Button> Edit </Button></Td>
-            <Td><Button> Delete </Button></Td>
+            <Td color='green'><Link to={`/edit/${item._id}`}> Edit </Link></Td>
+            <Td color='red'><Link  to={`/delete/${item._id}`}> Delete </Link></Td>
 
 
           </Tr>

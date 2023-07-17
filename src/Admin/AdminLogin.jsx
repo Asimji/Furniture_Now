@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom";
-import {Box, Image, Button, Input, Flex, Heading, Text} from "@chakra-ui/react"
+import {Box, Image, Button, Input, Flex, Heading} from "@chakra-ui/react"
 import axios from "axios";
 
 

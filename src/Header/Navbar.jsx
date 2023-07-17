@@ -10,6 +10,8 @@ export default function Navbar(){
   console.log(val)
   const navigate=useNavigate()
 
+  const loginToken=JSON.parse(localStorage.getItem('loginToken'))||""
+
 const handleChange=(e)=>{
   val.setQuery(e.target.value)
 }
@@ -470,9 +472,12 @@ const handleChange=(e)=>{
                  <h5 id="lh5">Welcome {localStorage.getItem("loggedIn")?userName.name:""}</h5>
                  <p id="lp">To access account and manage order</p>
            
-              {!localStorage.getItem("loggedIn")?<Link id="logincss" to="/login">
-              <button id="ls" style={{width:"80px",height:"50px"}} >LOGIN / SIGNUP</button>
-              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("input");localStorage.removeItem("loggedIn");navigate("/")}}>Logout</button>
+              {!loginToken?<Link id="logincss" to="/login">
+              <button id="ls" style={{width:"80px",height:"50px"}} >
+                LOGIN / SIGNUP
+                
+                </button>
+              </Link>: <button id="ls" style={{width:"80px",height:"50px"}} onClick={()=>{localStorage.removeItem("loginToken");navigate("/")}}>Logout</button>
                 }
                  
               
@@ -517,7 +522,7 @@ const handleChange=(e)=>{
 
     <div>
       <Link id="count" >  <i className="fa-solid fa-bag-shopping font " id="i1"><span  id="count_cart">&nbsp;</span></i></Link>
-       <br/>  <Link id="cart_tag" >Bag</Link>
+       <br/>  <Link to={'/cart'} id="cart_tag" >Bag</Link>
     </div>
 </div>
 

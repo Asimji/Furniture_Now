@@ -13,10 +13,14 @@ import Navbar from "../Header/Navbar"
 
 
 const Product=()=>{
+
+  const loginToken=JSON.parse(localStorage.getItem("loginToken")) ||""
+  console.log('loginToken',loginToken)
   
   const [searchParams,setSearchParams]=useSearchParams()
   const location=useLocation()  
   const store=useSelector(store=>store.productReducer.products)
+  console.log(store)
   const dispatch=useDispatch()
   
   const initPage=searchParams.get('page')
@@ -52,6 +56,21 @@ dispatch(getProducts(obj))
 
 const handlePage=(page)=>{
   setPage(page)
+}
+
+const handleClick=(id)=>{
+  let newData=store.filter((item,i)=>{
+    return item._id===id
+  })
+  console.log(newData[0])
+  fetch(`${process.env.REACT_APP_URL}/cart/create`,{
+    method:'POST',
+    headers:{
+        "Content-Type":"application/json",
+        Authorization:`Bearer ${loginToken}`
+    },
+    body:JSON.stringify(newData[0])
+}).then(res=>res.json()).then((res)=>{alert(res.msg)}).catch(e=>console.log(e))
 }
 
     return (
@@ -94,6 +113,7 @@ const handlePage=(page)=>{
             </Button>
               </Link>
             <Button variant='ghost' colorScheme='blue'borderRadius="10px" border="none" cursor="pointer" 
+          onClick={()=>handleClick(item._id)}
              >
               Add to cart
             </Button>
