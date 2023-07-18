@@ -11,6 +11,7 @@ import AdminLogin from "../Admin/AdminLogin";
 import AdminPrivate from "./AdminPrivate";
 import EditProduct from "../Admin/EditProduct"
 import LoginPrivate from "./LoginPrivate";
+import AddProduct from "../Admin/AddProduct";
 
 
 export default function Router(){
@@ -36,6 +37,7 @@ export default function Router(){
       <Route path='/admin/order' element={<Order/>}/>
       <Route path='/admin/login' element={<AdminLogin/>}/>
       <Route path='/edit/:id' element={<EditProduct/>}/>
+      <Route path='/admin/add' element={<AddProduct/>}/>
         
     </Routes>
 }

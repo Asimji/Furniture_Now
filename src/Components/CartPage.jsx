@@ -1,6 +1,6 @@
 import { Box, Button, Center, Flex, Grid, Heading, Image, Input, Select, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import f1 from "../Images/Furniture_1.png"
+import {Link} from "react-router-dom"
 import Delivery from './Delivery'
 import axios from 'axios'
 
@@ -66,9 +66,12 @@ console.log(totalQuantity)
 
   return (
     <Box>
+      <Flex gap={'50vh'}>
+    <Link to="/product">back {"<<<"}</Link>
       <Center>
       <Heading><span style={{color:'red'}}>Furniture_Now</span> Cart Page</Heading>
       </Center>
+      </Flex>
 
       <Flex p={'5vh'} gap={'2vh'}>
         <Box textAlign={'left'} h={'84vh'} >
