@@ -1,29 +1,38 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import {
 Button,Text,Heading,Image,Box,SimpleGrid
 } from "@chakra-ui/react"
 import "./SinglePage.css"
 import Footer from "../Footer/Footer"
-import Navbar from "../Header/Navbar"
+import NewNavbar from "./NewNavbar"
 
 
 export default function SinglePage(){
 
-    
+  const loginToken=JSON.parse(localStorage.getItem("loginToken")) ||""
     const {_id}=useParams()
     const [user,setuser]=useState("")
-    const navigate=useNavigate()
-console.log(_id)
+
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_URL}/products/${_id}`).then((res)=>{console.log(res);setuser(res.data.product)}).catch((e)=>console.log(e))
+        axios.get(`${process.env.REACT_APP_URL}/product/products/${_id}`).then((res)=>{console.log(res);setuser(res.data.product)}).catch((e)=>console.log(e))
     },[_id])
 
+    const handleClick=(id)=>{
+      fetch(`${process.env.REACT_APP_URL}/cart/create`,{
+        method:'POST',
+        headers:{
+            "Content-Type":"application/json",
+            Authorization:`Bearer ${loginToken}`
+        },
+        body:JSON.stringify(user)
+    }).then(res=>res.json()).then((res)=>{alert(res.msg)}).catch(e=>console.log(e))
+    }
 
 
-    return  <Box mt={20}>
-  <Navbar/>
+    return  <Box >
+  <NewNavbar/>
                  <SimpleGrid columns={2}  className="card"> 
       
 
@@ -56,9 +65,11 @@ console.log(_id)
            </SimpleGrid>
            <SimpleGrid columns={2} gap={10} mt={10} pl={20} pr={20}>
         <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer"
-        onClick={()=>{navigate("/cart")}}>
+          onClick={()=>handleClick(user._id)}>
         ADD TO CART  </Button>
-        <Button borderRadius="10px"  border="none" cursor="pointer">WISHLIST</Button>
+        <Button borderRadius="10px"  border="none" cursor="pointer">
+          <Link to="/cart">Payment</Link>
+        </Button>
            </SimpleGrid>
 
            <div style={{marginTop:"10px"}}>

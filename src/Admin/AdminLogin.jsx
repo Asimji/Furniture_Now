@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {Box, Image, Button, Input, Flex, Heading} from "@chakra-ui/react"
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 
 export default function AdminLogin(){
@@ -8,7 +9,7 @@ export default function AdminLogin(){
 
   const handleSubmit=()=>{
     console.log(admin)
-    axios.post(`${process.env.REACT_APP_URL}/login`,admin).then((res)=>{console.log(res);localStorage.setItem("adminTOken",JSON.stringify(res.data.token));alert(res.data.msg);window.location.reload()}).catch(e=>console.log(e))
+    axios.post(`${process.env.REACT_APP_URL}/user/login`,admin).then((res)=>{localStorage.setItem("adminTOken",JSON.stringify(res.data.token));alert(res.data.msg);window.location.reload()}).catch(e=>console.log(e))
   }
 
   return   <Box>
@@ -26,6 +27,7 @@ export default function AdminLogin(){
     <Input placeholder="Enter Your Email" mb={2} onChange={(e)=>setAdmin({...admin,email:e.target.value})} />
     <Input placeholder="Enter Your Password" mb={2}  onChange={(e)=>setAdmin({...admin,password:e.target.value})} />
     <Button w='100%' onClick={handleSubmit}>Sign In</Button>
+    <Link to='/'>Home</Link>
   </Flex>
 </Box>
   </Box>

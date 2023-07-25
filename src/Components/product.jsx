@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getProducts } from "../redux/productReducer/action"
 import Sidebar from "./Sidebar"
 import Footer from "../Footer/Footer"
-import Navbar from "../Header/Navbar"
+import NewNavbar from "./NewNavbar"
 
 
 
@@ -74,8 +74,8 @@ const handleClick=(id)=>{
 }
 
     return (
-        <Box mt={20} mb={'20vh'}>
-<Navbar/>
+        <Box  mb={'20vh'}>
+<NewNavbar/>
           <Flex gap={'10vh'}>
     <Box mt={'3vh'} ml={'5vh'} border={'1px solid gray'} p={'2vh'} w={'50vh'} h={'80vh'}>
       <Sidebar page={page} limit={limit}/>

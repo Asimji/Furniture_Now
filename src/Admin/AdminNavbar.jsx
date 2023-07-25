@@ -20,7 +20,7 @@ const location =useLocation()
     <Box  py={4} px={6}>
       <Flex alignItems="center" justifyContent="space-between" direction={isMobile ? "column" : "row"}>
         <Text  fontSize="lg" fontWeight="bold" mb={isMobile ? 4 : 0}>
-         Furniture_Now
+        <Link to="/"> Furniture_Now </Link>
         </Text>
 
         {!isMobile && (

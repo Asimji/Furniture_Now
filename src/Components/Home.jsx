@@ -14,7 +14,7 @@ import f11 from "../Images/Furniture_11.png"
 import f12 from "../Images/Furniture_12.png"
 import { Link } from "react-router-dom";
 import "./Home.css"
-import Navbar from "../Header/Navbar";
+import NewNavbar from "./NewNavbar"
 import Footer from "../Footer/Footer";
 
 
@@ -24,7 +24,7 @@ export default function Home(){
   
 
     return <div style={{marginTop:"10px"}}>
-        <Navbar/>
+        <NewNavbar/>
         <Box h="350px" mb={20}>
          <Link to="/product">  <Image src={long} w="93.5%" h="100%" /> </Link> 
         </Box>

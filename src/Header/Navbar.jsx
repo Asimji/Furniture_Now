@@ -10,11 +10,11 @@ export default function Navbar(){
   console.log(val)
   const navigate=useNavigate()
 
+  
+  const handleChange=(e)=>{
+    val.setQuery(e.target.value)
+  }
   const loginToken=JSON.parse(localStorage.getItem('loginToken'))||""
-
-const handleChange=(e)=>{
-  val.setQuery(e.target.value)
-}
   const userName=JSON.parse(localStorage.getItem("input"))||""
 
     return  (
