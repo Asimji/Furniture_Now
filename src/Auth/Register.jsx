@@ -1,11 +1,12 @@
 import {Box, Image, Button, Input, Flex, Heading} from "@chakra-ui/react"
+import {Link} from "react-router-dom"
 
 export default function Register(){
 
   
 
     return (<Box>
-        <Heading ml={'2vh'} color={'orange.300'}>Welcome Admin !</Heading>
+        <Heading ml={'2vh'} color={'orange.300'}>Welcome User !</Heading>
          
          <Box height="90vh" display="flex" justifyContent="center" alignItems="center">
          <Flex direction="column" alignItems="center" border={'1px solid gray'} p='3vh' w={'60vh'}>
@@ -18,7 +19,8 @@ export default function Register(){
            </Box>
            <Input placeholder="Enter Your Email" mb={2}  />
            <Input placeholder="Enter Your Password" mb={2} />
-           <Button w='100%' >Sign In</Button>
+           <Button w='100%' >Register</Button>
+           <div style={{float:"left"}}>Already a User !! {"  "} <Link to="/login">SignIn</Link> </div>
          </Flex>
        </Box>
          </Box>   

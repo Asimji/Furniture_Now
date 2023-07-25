@@ -14,22 +14,31 @@ const CartPage = () => {
   let total=0;
   let count=data.length
   let totalQuantity=0
+  let userId
 
 for(let i=0;i<data.length;i++){
   total+=(data[i].price * data[i].quantity);
   totalQuantity+=data[i].quantity
+  userId=data[i].userId
 }
-console.log(totalQuantity)
+console.log(userId)
+
+const fetchedData=()=>{
+  axios.get(`${process.env.REACT_APP_URL}/cart`,{
+    headers:{
+      Authorization:`Bearer ${loginToken}`
+    }
+   }).then(res=>setData(res.data.cart)).catch(e=>console.log(e))
+}
 
   useEffect(()=>{
- axios.get(`${process.env.REACT_APP_URL}/cart`,{
-  headers:{
-    Authorization:`Bearer ${loginToken}`
-  }
- }).then(res=>setData(res.data.cart)).catch(e=>console.log(e))
+ fetchedData()
   },[])
 
- 
+  
+
+  
+
 
   const handleAdd=(id,val)=>{
     val=val+1
@@ -40,7 +49,7 @@ console.log(totalQuantity)
           Authorization:`Bearer ${loginToken}`
       },
       body:JSON.stringify({quantity:val})
-  }).then(res=>res.json()).then((res)=>{console.log(res);window.location.reload()}).catch(e=>console.log(e))
+  }).then(res=>res.json()).then((res)=>{fetchedData()}).catch(e=>console.log(e))
   
   }
   const handleSubtract=(id,val)=>{
@@ -53,7 +62,7 @@ console.log(totalQuantity)
           Authorization:`Bearer ${loginToken}`
         },
         body:JSON.stringify({quantity:val})
-      }).then(res=>res.json()).then((res)=>{console.log(res);window.location.reload()}).catch(e=>console.log(e))
+      }).then(res=>res.json()).then((res)=>{fetchedData()}).catch(e=>console.log(e))
   }
 
   const handleDelete=(id)=>{
@@ -61,7 +70,7 @@ console.log(totalQuantity)
       headers:{
         Authorization:`Bearer ${loginToken}`
       }
-    }).then((res)=>{alert(res.data.msg);window.location.reload()}).catch(e=>console.log(e))
+    }).then((res)=>{alert(res.data.msg);fetchedData()}).catch(e=>console.log(e))
   }
 
   return (
@@ -76,9 +85,9 @@ console.log(totalQuantity)
       <Flex p={'5vh'} gap={'2vh'}>
         <Box textAlign={'left'} h={'84vh'} >
          
-   <Heading>Your Cart({totalQuantity} item)</Heading>
+  {data.length>0 &&  <Heading>Your Cart({totalQuantity} item)</Heading>}
    <Flex flexDirection={'column'}>
-    {data.length>0 && data.map((item,i)=>{
+    {data.length ? data.map((item,i)=>{
       return <Box key={item._id}>
       <Button w={'100%'}>You Saved Rs 15,000 on This Order</Button>
 <Grid templateColumns={'repeat(2,1fr)'} gap={'2vh'} border={'1px solid gray'} h={'81%'} p={'2vh'} mt={'2vh'}>
@@ -114,11 +123,11 @@ console.log(totalQuantity)
     </Box>
 </Grid>
       </Box>
-    })}
+    }) : <h1>Your Cart is Empty !</h1>}
 </Flex>
         </Box>
         <Box mt={'12vh'}>
-        <Delivery total={total} count={count} totalQuantity={totalQuantity}/>
+        <Delivery total={total} count={count} totalQuantity={totalQuantity} userId={userId} fetchedData={fetchedData}/>
         </Box>
       </Flex>
     </Box>

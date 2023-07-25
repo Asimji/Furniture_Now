@@ -3,15 +3,17 @@ import {Box, Image, Button, Input, Flex, Heading} from "@chakra-ui/react"
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postLogin } from "../redux/loginReducer/action";
+import {Link, useNavigate} from "react-router-dom"
 
 
 export default function Login(){
+  const navigate=useNavigate()
 
     const [user,setUser]=useState({email:"",password:""});
    const dispatch=useDispatch()
    const handleClick=()=>{
-      console.log(user);
       dispatch(postLogin(user))
+      navigate("/")
    }
 
     return ( <Box>
@@ -29,6 +31,7 @@ export default function Login(){
            <Input placeholder="Enter Your Email" mb={2} onChange={(e)=>setUser({...user,email:e.target.value})} />
            <Input placeholder="Enter Your Password" mb={2} onChange={(e)=>setUser({...user,password:e.target.value})} />
            <Button w='100%' onClick={handleClick} >Sign In</Button>
+           <div style={{float:"left"}}>Not a User {"  "} <Link to="/register">Signup</Link> </div>
          </Flex>
        </Box>
          </Box>)
