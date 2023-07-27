@@ -5,7 +5,7 @@ import axios from 'axios'
 const Delivery = ({total,count,totalQuantity,userId,fetchedData}) => {
   const loginToken=JSON.parse(localStorage.getItem('loginToken'))||""
   const [coupon,setCoupon]=useState(false)
-console.log("userId in Delivery",userId);
+
 
   const handleDelete=()=>{
     axios.delete(`${process.env.REACT_APP_URL}/cart/deleteall/${userId}`,{
@@ -16,7 +16,7 @@ console.log("userId in Delivery",userId);
   }
 
   return (
-    <Box textAlign={'left'}>
+    <Box textAlign={'left'} >
       <p>Delivering To</p>
       <Flex justify={'center'} gap={'5vh'} mb={'3vh'}>
       <Input type="text" placeholder='FURNITURE_100' isDisabled={true} color={'red'}/> 

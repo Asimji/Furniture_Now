@@ -1,7 +1,0 @@
-@media all and (min-width:50px) and (max-width:900px){
-    .card{
-
-        grid-template-columns: repeat(1,1fr);
-    }
-}
-

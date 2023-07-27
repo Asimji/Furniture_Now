@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom"
 import {
 Button,Text,Heading,Image,Box,SimpleGrid
 } from "@chakra-ui/react"
-import "./SinglePage.css"
+
 import Footer from "../Footer/Footer"
 import NewNavbar from "./NewNavbar"
 
@@ -16,7 +16,7 @@ export default function SinglePage(){
     const [user,setuser]=useState("")
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_URL}/product/products/${_id}`).then((res)=>{console.log(res);setuser(res.data.product)}).catch((e)=>console.log(e))
+        axios.get(`${process.env.REACT_APP_URL}/product/products/${_id}`).then((res)=>{setuser(res.data.product)}).catch((e)=>console.log(e))
     },[_id])
 
     const handleClick=(id)=>{
@@ -33,10 +33,10 @@ export default function SinglePage(){
 
     return  <Box >
   <NewNavbar/>
-                 <SimpleGrid columns={2}  className="card"> 
+                 <SimpleGrid columns={{lg:2,base:1}}  className="card"> 
       
 
-      <Box ml={'10vh'}>
+      <Box ml={{lg:'10vh'}}>
          <Image
            src={user.image}
            alt={user.title}
@@ -56,14 +56,14 @@ export default function SinglePage(){
              Price : Rs {user.price}
            </Text>
            <Text>Select Size </Text>
-           <SimpleGrid columns={5} gap={10} pl={30} >
+           <SimpleGrid columns={{lg:5,base:3}} gap={10} pl={{lg:30}} >
             <Button w="80px" borderRadius="100px">XXL</Button>
             <Button w="80px" borderRadius="100px">XL</Button>
             <Button w="80px" borderRadius="100px">Large</Button>
             <Button w="80px" borderRadius="100px">Medium</Button>
             <Button w="80px" borderRadius="100px">Small</Button>
            </SimpleGrid>
-           <SimpleGrid columns={2} gap={10} mt={10} pl={20} pr={20}>
+           <SimpleGrid columns={2} gap={10} mt={10} pl={{lg:20}} pr={{lg:20}}>
         <Button variant='ghost' colorScheme='blue' p={5} borderRadius="10px" border="none" cursor="pointer"
           onClick={()=>handleClick(user._id)}>
         ADD TO CART  </Button>

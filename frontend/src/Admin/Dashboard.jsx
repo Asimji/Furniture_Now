@@ -31,7 +31,7 @@ console.log(page)
       <Box>  
       <AdminNavbar/>
       </Box>
-      <Flex >
+      <Flex direction={{lg:'row',base:'column'}} >
       <Sidebar/>
 
       <Box overflowX="auto">
