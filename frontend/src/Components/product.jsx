@@ -15,19 +15,19 @@ import NewNavbar from "./NewNavbar"
 const Product=()=>{
 
   const loginToken=JSON.parse(localStorage.getItem("loginToken")) ||""
-  console.log('loginToken',loginToken)
+  
   
   const [searchParams,setSearchParams]=useSearchParams()
   const location=useLocation()  
   const store=useSelector(store=>store.productReducer.products)
-  console.log(store)
+
   const dispatch=useDispatch()
   
   const initPage=searchParams.get('page')
 
   const [page,setPage]=useState(initPage||1);
   const value=useContext(SearchContext)
- console.log(searchParams)
+ 
  
  const obj={
   params:{
@@ -45,7 +45,7 @@ const Product=()=>{
 const limit=6;
 const count=Math.ceil(24/limit)
 
-console.log(location)
+
 
 useEffect(()=>{
 dispatch(getProducts(obj)) 
@@ -62,7 +62,7 @@ const handleClick=(id)=>{
   let newData=store.filter((item,i)=>{
     return item._id===id
   })
-  console.log(newData[0])
+
   fetch(`${process.env.REACT_APP_URL}/cart/create`,{
     method:'POST',
     headers:{
@@ -74,17 +74,19 @@ const handleClick=(id)=>{
 }
 
     return (
-        <Box  mb={'20vh'}>
+        <Box >
+          <Box >
 <NewNavbar/>
-          <Flex gap={'10vh'}>
-    <Box mt={'3vh'} ml={'5vh'} border={'1px solid gray'} p={'2vh'} w={'50vh'} h={'80vh'}>
+          </Box>
+          <Flex gap={'2vh'} direction={{lg:'row',base:'column'}}>
+    <Box ml={{lg:'5vh'}} border={'1px solid gray'} p={{lg:'2vh'}} w={{lg:'50vh'}} h={{lg:'80vh'}}>
       <Sidebar page={page} limit={limit}/>
     </Box>
     <Box>
-       <SimpleGrid columns={[1,2,3]} spacing={5}  mr={'5vh'} >
+       <SimpleGrid templateColumns={{lg:'repeat(3,1fr)',md:'repeat(2,1fr)',base:'repeat(1,1fr)'}}   mr={{lg:'5vh',base:0}} >
           {store.map((item)=>{
               return (
-                  <Card key={item._id} m={5}  w={'50vh'} textAlign={'left'}> 
+                  <Card key={item._id}  textAlign={'left'}> 
         <CardBody>
           <Image
             src={item.image}
@@ -125,7 +127,7 @@ const handleClick=(id)=>{
           })}
 
                     </SimpleGrid>
-                    <Box float={"right"} ml={'9vh'} mt={'2vh'}>
+                    <Box float={{lg:"right",base:'left'}} ml={{lg:'9vh',base:0}} mt={'2vh'}>
              <Pagination handlePage={handlePage} current_page={page} count={count}/>
                     </Box>
        </Box>

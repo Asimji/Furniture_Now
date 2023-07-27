@@ -9,7 +9,7 @@ const CartPage = () => {
   const loginToken=JSON.parse(localStorage.getItem('loginToken'))||""
   const [data,setData]=useState([])
   const [quant,setQuant]=useState(1)
-  console.log(data)
+
 
   let total=0;
   let count=data.length
@@ -21,7 +21,7 @@ for(let i=0;i<data.length;i++){
   totalQuantity+=data[i].quantity
   userId=data[i].userId
 }
-console.log(userId)
+
 
 const fetchedData=()=>{
   axios.get(`${process.env.REACT_APP_URL}/cart`,{
@@ -75,29 +75,29 @@ const fetchedData=()=>{
 
   return (
     <Box>
-      <Flex gap={'50vh'}>
-    <Link to="/product">back {"<<<"}</Link>
-      <Center>
-      <Heading><span style={{color:'red'}}>Furniture_Now</span> Cart Page</Heading>
-      </Center>
+      <Flex gap={{lg:'50vh',base:0}} direction={{base:'column',lg:'row'}}>
+    <span> <Link to="/">Home</Link> / <Link to='/product'>Product</Link>  </span>
+      
+      <Heading fontSize={{lg:'5vh',base:'2vh'}} textAlign={{base:'left',lg:'center'}}><span style={{color:'red'}}>Furniture_Now</span> Cart Page</Heading>
+      
       </Flex>
 
-      <Flex p={'5vh'} gap={'2vh'}>
-        <Box textAlign={'left'} h={'84vh'} >
+      <Flex p={{lg:'5vh',base:0}} gap={'2vh'} direction={{base:'column',lg:'row'}}>
+        <Box textAlign={'left'}  >
          
   {data.length>0 &&  <Heading>Your Cart({totalQuantity} item)</Heading>}
    <Flex flexDirection={'column'}>
     {data.length ? data.map((item,i)=>{
       return <Box key={item._id}>
       <Button w={'100%'}>You Saved Rs 15,000 on This Order</Button>
-<Grid templateColumns={'repeat(2,1fr)'} gap={'2vh'} border={'1px solid gray'} h={'81%'} p={'2vh'} mt={'2vh'}>
+<Grid templateColumns={{lg:'repeat(2,1fr)',base:'repeat(1,1fr)'}} gap={'2vh'} border={'1px solid gray'} p={{lg:'2vh',base:0}} mt={'2vh'}>
     <Box textAlign={'left'}>
-        <Box  w={'50vh'} h={'40vh'}>
-        <Image src={item.image} w={'100%'} h={'100%'}/>
+        <Box >
+        <Image src={item.image} />
         </Box>
         <Flex gap={'2vh'} mt={'2vh'}>
-        <Button w={'50%'}  >Move To WishList</Button>
-        <Button w={'50%'} color={'red'} onClick={()=>handleDelete(item._id)}>Delete</Button>
+        <Button   >Move To WishList</Button>
+        <Button  color={'red'} onClick={()=>handleDelete(item._id)}>Delete</Button>
         </Flex>
     </Box>
     <Box  textAlign={'left'}>
@@ -115,18 +115,18 @@ const fetchedData=()=>{
                 <Text>ITEM PRICE</Text>
             </Box>
             <Box>
-                <Text ml={'2vh'}>{item.price * item.quantity}</Text>
+                <Text ml={{lg:'2vh',base:0}}>{item.price * item.quantity}</Text>
                 <Text>- Rs 15,000</Text>
-                <Text ml={'2vh'}>{item.price * item.quantity - 15000}</Text>
+                <Text ml={{lg:'2vh',base:0}}>{item.price * item.quantity - 15000}</Text>
             </Box>
         </Flex>
     </Box>
 </Grid>
       </Box>
-    }) : <h1>Your Cart is Empty !</h1>}
+    }) : <h1>Your Cart is Empty ! <br/> Visit {" >>"} <span style={{color:'blue',textDecoration:'underline'}} > <Link to="/product">Product</Link> </span></h1>}
 </Flex>
         </Box>
-        <Box mt={'12vh'}>
+        <Box mt={{lg:'10vh',base:0}}>
         <Delivery total={total} count={count} totalQuantity={totalQuantity} userId={userId} fetchedData={fetchedData}/>
         </Box>
       </Flex>

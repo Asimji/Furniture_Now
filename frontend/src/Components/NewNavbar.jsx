@@ -19,7 +19,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { MdShoppingCartCheckout } from 'react-icons/md';
 import { ImUser, ImSearch } from 'react-icons/im';
-import logo from '../Images/Furniture_Now.jpg';
+import logo from '../Images/Furniture.png';
 
 const NewNavbar = () => {
     const AuthToken=JSON.parse(localStorage.getItem("userShop")) || ""
@@ -42,10 +42,10 @@ const NewNavbar = () => {
 
   return (
     <Box as="nav" bg="white" px={4} py={2} boxShadow="sm">
-      <Flex justify="space-between" align="center">
+      <Flex justify={{base:"space-between",md:'none'}} align="center">
         {/* Logo */}
         <Link to="/">
-          <Image src={logo} alt="logo" w="80px" h="50px" border="0px solid red" />
+          <Image src={logo} alt="logo" w="20vh" h="10vh" border="0px solid red" />
         </Link>
 
         {/* Hamburger Icon for Small and Medium Screens */}
@@ -148,6 +148,9 @@ const NewNavbar = () => {
           </Box>
           <Box  mt="2">
             <Link to="/cart">Cart</Link>
+          </Box>
+          <Box  mt="2">
+          <Link to="/admin">Admin</Link>
           </Box>
           {/* Add more mobile menu items as needed */}
         </Flex>

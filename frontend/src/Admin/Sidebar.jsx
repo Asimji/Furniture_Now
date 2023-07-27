@@ -7,8 +7,8 @@ const Sidebar = () => {
   return (
     <Flex
       color="black"
-      flexDirection="column"
-      height="90vh"
+      flexDirection={{lg:"column",base:'row'}}
+      height={{lg:"90vh"}}
       width={sidebarWidth}
     >
       <Box px={4} py={6}>
@@ -17,7 +17,7 @@ const Sidebar = () => {
         </Text>
       </Box>
 
-      <Flex flexDirection="column"   pl={'2vh'} >
+      <Flex flexDirection={"column"}   pl={{lg:'2vh'}} >
         <Text display={isMobile ? "none" : "block"}><Link>Dashboard</Link></Text>
         <Text><Link>Order</Link></Text>
         <Text><Link>Customer</Link></Text>

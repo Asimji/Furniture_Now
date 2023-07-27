@@ -37,8 +37,7 @@ const Sidebar = ({page,limit}) => {
         setSearchParams(params)
     },[type,order,page,limit])
 
-    console.log(searchParams)
-    console.log(order)
+ 
   return (
     <Box>
       <Box  fontSize={'3vh'} >
@@ -48,15 +47,15 @@ const Sidebar = ({page,limit}) => {
             <input type='checkbox' value={'dining'} checked={type.includes('dining')} onChange={handleType}/>
             <label  style={{marginLeft:'1vh'}}>Dining Set</label>
          </Box>
-         <Box mr={'4vh'}>
+         <Box mr={{lg:'4vh',base:0}}>
             <input type='checkbox' value={'bed'} checked={type.includes('bed')}  onChange={handleType}/>
             <label style={{marginLeft:'1vh'}}>Bed Set</label>
          </Box>
-         <Box mr={'3vh'}>
+         <Box mr={{lg:'3vh',base:0}}>
             <input type='checkbox' value={'sofa'} checked={type.includes('sofa')} onChange={handleType}/>
             <label style={{marginLeft:'1vh'}}>Sofa Set</label>
          </Box>
-         <Box mr={'1.5vh'}>
+         <Box mr={{lg:'1.5vh',base:0}}>
             <input type='checkbox' value={'chair'} checked={type.includes('chair')} onChange={handleType}/>
             <label style={{marginLeft:'1vh'}}>Chair Set</label>
          </Box>
@@ -67,7 +66,7 @@ const Sidebar = ({page,limit}) => {
             <input type='radio' name='sort' value={'asc'} onChange={(e)=>setOrder(e.target.value)}/>
             <label style={{marginLeft:'1vh'}}>Ascending</label>
         </Box>
-        <Box ml={'1.5vh'}>
+        <Box >
         <input type='radio' name='sort' value={'desc'} onChange={(e)=>setOrder(e.target.value)}/>
         <label style={{marginLeft:'1vh'}}>Descending</label>
         </Box>

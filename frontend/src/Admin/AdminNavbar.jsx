@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Input, IconButton, Menu, MenuButton, MenuItem, MenuList, Text, useBreakpointValue,Image } from "@chakra-ui/react";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
-import logo from "../Images/Furniture_Now.jpg"
+import logo from "../Images/Furniture.png"
 import {Link, useLocation} from "react-router-dom"
 import {useEffect} from "react"
 
@@ -50,7 +50,7 @@ const location =useLocation()
               Admin
               </Text>
               <Link to="/">
-              <Image src={logo} alt="Logo" width={32} height={26} />
+              <Image src={logo} alt="Logo" width={{lg:'20vh'}} height={{lg:'6vh'}} />
               </Link>
             </Flex>
           </Flex>
@@ -80,7 +80,7 @@ const location =useLocation()
                 Admin
               </Text>
               <Link to="/">
-              <Image src={logo} alt="Logo" width={32} height={26} />
+              <Image src={logo} alt="Logo" width={'6vh'} height={26} />
               </Link>
             </Flex>
           </Flex>
