@@ -59,7 +59,7 @@ Once you have the code on your machine, open the project folder in your code edi
     >my-app
     ├── >src
     │    └── Components
-    │    └── images
+    │    └── Images
     │    └── Pages
     │    └── Redux
     │    └── Styling  
