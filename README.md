@@ -27,7 +27,7 @@ It is an e-commerce website that shops Online in India for Furniture,Home Decor,
 
            
 <h3>Screenshots:</h3>
-<img src="frontend/src/Images/Screenshot(118).png" alt="screenshot" /> 
+<img src="./frontend/src/Images/Screenshot(118).png" alt="screenshot" /> 
 <img src="frontend/src/Images/Screenshot(119).png" alt="screenshot" /> 
 <img src="frontend/src/Images/Screenshot(120).png" alt="screenshot" /> 
 <img src="frontend/src/Images/Screenshot(121).png" alt="screenshot" /> 
