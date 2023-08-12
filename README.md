@@ -2,7 +2,7 @@
 
 <h1>Furniture_Now</h1>
 
-<h3>Frontend Link: https://frontend-asimji.vercel.app/ </h3> 
+<h3>Frontend Link: https://frontend-asimji.vercel.app </h3> 
 <h3>Backend  Link: https://furniture-z8ny.onrender.com/ </h3> 
 
 
